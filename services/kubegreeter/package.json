@@ -1,0 +1,12 @@
+{
+  "name": "kubegreeter",
+  "version": "1.0.0",
+  "description": "An application that says hello to Kubernetes!",
+  "main": "index.js",
+  "repository": "https://github.com/degemenc/kubernetes-101.git",
+  "author": "Deniz Egemen Coşkun",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
