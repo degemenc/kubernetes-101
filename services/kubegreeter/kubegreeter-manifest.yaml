@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubegreeter-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubegreeter
+  template:
+    metadata:
+      labels:
+        app: kubegreeter
+    spec:
+      containers:
+      - name: kubegreeter
+        image: degemenc/kubegreeter
+        ports:
+        - containerPort: 8080
