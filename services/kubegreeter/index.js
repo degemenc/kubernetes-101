@@ -28,8 +28,8 @@ console.log(`Running on http://${HOST}:${PORT}`);
 
 // Name Hero Options
 const nameHeroOptions = {
-  hostname: HOST,
-  port: 3000,
+  hostname: process.env.NAMEHERO_SERVICE_SERVICE_HOST,
+  port: process.env.NAMEHERO_SERVICE_SERVICE_PORT,
   path: '/',
   method: 'GET'
 }
