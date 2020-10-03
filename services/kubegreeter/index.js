@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello Kubernetes!');
+  res.send(`Hello Kubernetes from pod ${process.env.HOSTNAME}!`);
 });
 
 app.listen(PORT, HOST);
