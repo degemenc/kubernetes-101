@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: namehero-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: namehero
+  template:
+    metadata:
+      labels:
+        app: namehero
+    spec:
+      containers:
+      - name: namehero
+        image: degemenc/namehero
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: namehero-service
+spec:
+  type: ClusterIP
+  selector:
+    app: namehero
+  ports:
+    - port: 3000
+      targetPort: 3000
