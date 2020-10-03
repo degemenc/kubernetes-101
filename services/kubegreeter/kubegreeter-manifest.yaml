@@ -17,3 +17,15 @@ spec:
         image: degemenc/kubegreeter
         ports:
         - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubegreeter-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: kubegreeter
+  ports:
+    - port: 8765
+      targetPort: 8080
